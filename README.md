@@ -48,7 +48,7 @@ The Habit Tracker API allows users to create, manage, and track their habits eff
 ## API Endpoints
 
 - `POST /habits`: Create a new habit
-- `PUT /habits/:id`: Update a habit's completion status
+- `POST /habits/:id/log`: Update a habit's completion status
 - `DELETE /habits/:id`: Delete a habit
 - `GET /habits`: Retrieve habits with optional filtering and pagination
 

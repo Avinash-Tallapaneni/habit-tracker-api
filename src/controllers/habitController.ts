@@ -161,12 +161,14 @@ const getHabit = (req: Request, res: Response, next: NextFunction) => {
 
     const validatePage = Number(page);
     const validateLimit = Number(limit);
+    const validStatuses = ["completed", "not_completed"];
 
     if (
       !validatePage ||
       validatePage < 1 ||
       !validateLimit ||
-      validateLimit < 1
+      validateLimit < 1 ||
+      (status && !validStatuses.includes(status.toString()))
     ) {
       return res.status(statusCodes.BAD_REQUEST.code).json({
         message: statusCodes.BAD_REQUEST.message,
